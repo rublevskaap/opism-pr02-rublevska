@@ -293,18 +293,6 @@ Connection: close
 <summary>**Вивід:**</summary>
 
 ```
-Last login: Wed Oct  7 20:15:03 on ttys000
-polarublevskaa@MacBook-Air-Pola ~ % openssl s_client -connect bank.gov.ua:443 -servername bank.gov.ua -crlf -quiet
-depth=2 C = US, O = Google Trust Services LLC, CN = GTS Root R4
-verify return:1
-depth=1 C = US, O = Google Trust Services, CN = WE1
-verify return:1
-depth=0 CN = bank.gov.ua
-verify return:1
-GET / HTTP/1.1
-Host: bank.gov.ua
-Connection: close
-
 HTTP/1.1 200 OK
 Date: Wed, 07 Oct 2026 17:18:19 GMT
 Content-Type: text/html; charset=UTF-8
@@ -4074,9 +4062,9 @@ Accept: */*
 
 | Проба | Значення поля `Host` | Версія | Код стану | Обсяг тіла відповіді | Збігається з A.1 (так / ні) |
 |---|---|---|---|---|---|
-| A.1 (вихідна) | | 1.1 |301 Moved Permanently | - | — |
+| A.1 (вихідна) |bank.gov.ua | 1.1 |301 Moved Permanently | - | — |
 | A.2 | поле відсутнє | 1.1 |400 Bad Request |155 байт |ні |
-| A.3.1 | | 1.1 |409 Conflict |16 байт |ні |
+| A.3.1 |netbsd.org | 1.1 |409 Conflict |16 байт |ні |
 | A.3.2 | `opism-pr02.invalid` | 1.1 |409 Conflict |16 байт |ні |
 | A.3.3 | поле відсутнє | 1.0 |403 Forbidden |57 байт |ні |
 
